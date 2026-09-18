@@ -14,4 +14,9 @@ func main() {
 	fmt.Println(myBook.Gettitle())
 
 	myBook.PrintInfo()
+
+	myTextbook := book.NewtextBook("la cartilla nacho", "cifuentes",
+		100, "memento farsa", "2")
+
+	myTextbook.PrintInfo()
 }

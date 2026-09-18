@@ -42,3 +42,22 @@ func (b *Book) Settitle(title string) {
 func (b *Book) Gettitle() string {
 	return b.title
 }
+
+type Textbook struct {
+	Book      Book
+	editorial string
+	niveles   string
+}
+
+func NewtextBook(title, author string, pages int, editorial, niveles string) *Textbook {
+	return &Textbook{
+		Book:      Book{title, author, pages},
+		editorial: editorial,
+		niveles:   niveles,
+	}
+}
+
+func (t *Textbook) PrintInfo() {
+	fmt.Printf("Title: %s, Author: %s, Pages: %d editorial: %s, niveles%s\n",
+		t.Book.title, t.Book.author, t.Book.pages, t.editorial, t.niveles)
+}
