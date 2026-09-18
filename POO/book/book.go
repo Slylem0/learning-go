@@ -6,9 +6,9 @@ import (
 )
 
 type Book struct {
-	Title  string
-	Author string
-	Pages  int
+	title  string
+	author string
+	pages  int
 }
 
 func NewBook(title, author string, pages int) (*Book, error) {
@@ -25,12 +25,20 @@ func NewBook(title, author string, pages int) (*Book, error) {
 	}
 
 	return &Book{
-		Title:  title,
-		Author: author,
-		Pages:  pages,
+		title:  title,
+		author: author,
+		pages:  pages,
 	}, nil
 }
 
 func (b *Book) PrintInfo() {
-	fmt.Printf("Title: %s, Author: %s, Pages: %d \n", b.Title, b.Author, b.Pages)
+	fmt.Printf("Title: %s, Author: %s, Pages: %d \n", b.title, b.author, b.pages)
+}
+
+func (b *Book) Settitle(title string) {
+	b.title = title
+}
+
+func (b *Book) Gettitle() string {
+	return b.title
 }
