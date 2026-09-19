@@ -1,6 +1,7 @@
 package main
 
 import (
+	"POO/animal"
 	"POO/book"
 	"fmt"
 )
@@ -25,4 +26,25 @@ func main() {
 
 	book.Print(myBook)
 	book.Print(myTextbook)
+
+	///////////////////////////////////////////////////////////////////////////////////
+	//
+	//
+	//
+	miPerro := animal.Perro{Nombre: "pepe"}
+	migato := animal.Gato{Nombre: "nacho"}
+
+	animal.HacerSonido(&miPerro)
+	animal.HacerSonido(&migato)
+
+	animales := []animal.Animal{
+		&animal.Gato{Nombre: "pepe"},
+		&animal.Perro{Nombre: "etesech"},
+		&animal.Gato{Nombre: "daniel"},
+		&animal.Perro{Nombre: "kevin"},
+	}
+
+	for _, animal := range animales {
+		animal.Sonido()
+	}
 }
