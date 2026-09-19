@@ -5,6 +5,14 @@ import (
 	"fmt"
 )
 
+type Printable interface {
+	PrintInfo()
+}
+
+func Print(p Printable) {
+	p.PrintInfo()
+}
+
 type Book struct {
 	title  string
 	author string

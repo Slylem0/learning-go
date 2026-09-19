@@ -19,4 +19,10 @@ func main() {
 		100, "memento farsa", "2")
 
 	myTextbook.PrintInfo()
+
+	//myBook.PrintInfo()
+	//myTextbook.PrintInfo()
+
+	book.Print(myBook)
+	book.Print(myTextbook)
 }
