@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"net/http"
 )
@@ -13,9 +14,21 @@ func hola(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "user-agent: %s\n", r.UserAgent())
 }
 
+func sipo(w http.ResponseWriter, r *http.Request) {
+	datos := map[string]string{
+		"mensaje": "hola mundo desde go WAZAAAAAAAAA",
+		"status":  "OK",
+	}
+
+	w.Header().Set("content-type", "application/json")
+	w.WriteHeader(http.StatusOK)
+
+	json.NewEncoder(w).Encode(datos)
+}
+
 func main() {
 	http.HandleFunc("/hola", hola)
-
+	http.HandleFunc("/sipo", sipo)
 	fmt.Println("servidor iniciando en http://localhost:8080")
 	http.ListenAndServe(":8080", nil)
 }
