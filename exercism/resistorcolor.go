@@ -4,33 +4,39 @@ import (
 	"fmt"
 )
 
-func Colors() []string {
-	color := []string{
-		"black",
-		"brown",
-		"red",
-		"orange",
-		"yellow",
-		"green",
-		"blue",
-		"violet",
-		"grey",
-		"white",
+func colors() map[string]int {
+	c := map[string]int{
+		"black":  0,
+		"brown":  1,
+		"red":    2,
+		"orange": 3,
+		"yellow": 4,
+		"green":  5,
+		"blue":   6,
+		"violet": 7,
+		"grey":   8,
+		"white":  9,
 	}
 
-	return color
+	return c
 }
 
-func ColorCode(color string) int {
-	n := Colors()
-	for i, c := range n {
-		if c == color {
-			return i
-		}
-	}
-	return -1
+func ColorCode(n map[string]int, clave string ) int{
+	n := colors()
+	var n := clave
+
+
+
+
+
+
 }
+
+
+
+
+
 
 func main() {
-	fmt.Println(ColorCode("black"))
+	fmt.Println(colors())
 }
